@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DZ13database</string>
+    <string name="infoStr">Информация о приложении</string>
+    <string name="exit">Выход</string>
+    <string name="button_start">Начать</string>
+    <string name="startTekst">База данных</string>
+</resources>
