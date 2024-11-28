@@ -21,6 +21,7 @@ import androidx.core.view.WindowInsetsCompat
 class BazaDan : AppCompatActivity() {
     private lateinit var toolbarBaza:Toolbar
     private lateinit var spiner_Role: Spinner
+
     private val db = DBHelper(this,null)
 
     private var role = mutableListOf(
