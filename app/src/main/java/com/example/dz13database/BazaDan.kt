@@ -20,7 +20,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class BazaDan : AppCompatActivity() {
     private lateinit var toolbarBaza:Toolbar
-    private lateinit var spiner_Dol: Spinner
+    private lateinit var spiner_Role: Spinner
     private val db = DBHelper(this,null)
 
     private var role = mutableListOf(
@@ -67,14 +67,14 @@ class BazaDan : AppCompatActivity() {
         toolbarBaza.setLogo(R.drawable.bd)
 
 //Инициализация Спинера
-        spiner_Dol=findViewById(R.id.spiner_Dol)
+        spiner_Role=findViewById(R.id.spiner_Role)
         var adapter = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_item,
             role
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spiner_Dol.adapter=adapter
+        spiner_Role.adapter=adapter
 
         // Преобразование Спинера в Текст
         val itemSelectListener: AdapterView.OnItemSelectedListener =
@@ -92,7 +92,7 @@ class BazaDan : AppCompatActivity() {
                 }
             }
 
-        spiner_Dol.onItemSelectedListener = itemSelectListener
+        spiner_Role.onItemSelectedListener = itemSelectListener
 
 //Обработка кнопки Добавить
         buttonAddBTN.setOnClickListener{
@@ -105,7 +105,7 @@ class BazaDan : AppCompatActivity() {
                 Toast.LENGTH_LONG).show()
             personNameET.text.clear()
             personFonET.text.clear()
-            spiner_Dol.setSelection(0)
+            spiner_Role.setSelection(0)
         }
 
 // Получение данных из базы
