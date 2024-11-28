@@ -43,12 +43,15 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="22sp"
             android:background="@color/white"
             android:textColor="@color/blue"
              />
 
         <EditText
-            android:id="@+id/productPriceET"
+            android:id="@+id/productFonET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -100,6 +103,50 @@
             />
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LL3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LL2" >
+
+        <EditText
+            android:id="@+id/productNameEditET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="@string/text_view_name_Edit"
+            android:textColor="@color/blue"
+            android:textSize="22sp"
+            android:layout_margin="8dp"
+            />
+
+        <Spinner
+            android:id="@+id/spiner_DolEditSP"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="22sp"
+            android:background="@color/white"
+            android:textColor="@color/blue"
+            />
+
+        <EditText
+            android:id="@+id/productFonEditET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="@string/text_view_telefonEdit"
+            android:textColor="@color/blue"
+            android:textSize="22sp"
+            android:layout_margin="8dp" />
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
