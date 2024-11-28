@@ -4,4 +4,6 @@
     <string name="exit">Выход</string>
     <string name="button_start">Начать</string>
     <string name="startTekst">База данных</string>
+    <string name="text_view_name">Введите Имя</string>
+    <string name="text_view_telefon">Введите телефон</string>
 </resources>

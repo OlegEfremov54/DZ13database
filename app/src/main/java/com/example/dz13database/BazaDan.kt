@@ -1,10 +1,10 @@
 package com.example.dz13database
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,32 +12,40 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var toolbarMain: Toolbar
-    private lateinit var startBTN:Button
+class BazaDan : AppCompatActivity() {
+    private lateinit var toolbarBaza:Toolbar
+
+    private lateinit var spinner:Spinner
+
+    private var role = mutableListOf(
+        "Должность","Директор","Програмист","Тестировщик","Аналитик"
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_baza_dan)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        toolbarMain = findViewById(R.id.toolbarMain)
-        setSupportActionBar(toolbarMain)
+
+        toolbarBaza = findViewById(R.id.toolbarBaza)
+        setSupportActionBar(toolbarBaza)
         title = " База данных"
-        toolbarMain.subtitle = " Вер.1.Главная страница"
-        toolbarMain.setLogo(R.drawable.bd)
+        toolbarBaza.subtitle = " Вер.1.Главная страница"
+        toolbarBaza.setLogo(R.drawable.bd)
 
+        spinner=findViewById(R.id.spiner_Dol)
+        var adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item,
+            role
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter=adapter
 
-        startBTN = findViewById(R.id.startBTN)
-
-        startBTN.setOnClickListener {
-            val intent = Intent(this, BazaDan::class.java)
-            startActivity(intent)
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -60,3 +68,4 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 }
+
