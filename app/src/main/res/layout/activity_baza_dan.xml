@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbarBaza">
 
         <EditText
-            android:id="@+id/productNameET"
+            android:id="@+id/personNameET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -51,7 +51,7 @@
              />
 
         <EditText
-            android:id="@+id/productFonET"
+            android:id="@+id/personFonET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -65,86 +65,147 @@
         android:id="@+id/LL2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/LL3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LL1" >
 
 
         <Button
+            android:id="@+id/buttonAddBTN"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:layout_weight="4"
             android:text="Сохранить данные"
-            android:textSize="24sp"
+            android:textSize="16sp"
             android:backgroundTint="@color/blue"
             />
 
         <Button
+            android:id="@+id/buttonGetBTN"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:layout_weight="4"
             android:text="Получить данные"
-            android:textSize="24sp"
+            android:textSize="16sp"
             android:backgroundTint="@color/blue"
             />
 
         <Button
+            android:id="@+id/buttonDelBTN"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:layout_weight="4"
             android:text="Удалить данные"
-            android:textSize="24sp"
+            android:textSize="16sp"
             android:backgroundTint="@color/blue"
             />
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/LL3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/LL4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LL2" >
 
-        <EditText
-            android:id="@+id/productNameEditET"
+
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Имя"
+            android:textSize="22dp"
+            android:layout_margin="10dp"
+            android:textColor="@color/red"
+            android:layout_weight="1"
+            android:paddingHorizontal="10dp"
+            tools:ignore="MissingConstraints"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="       Должность"
+            android:textSize="22dp"
+            android:paddingHorizontal="10dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textColor="@color/red"
+            tools:ignore="MissingConstraints"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Телефон"
+            android:textSize="22dp"
+            android:paddingHorizontal="10dp"
+            android:layout_margin="10dp"
+            android:textColor="@color/red"
+            tools:ignore="MissingConstraints"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL4"
+        android:layout_width="421dp"
+        android:layout_height="273dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LL3">
+
+        <EditText
+            android:id="@+id/personNameEditET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
             android:background="@color/white"
             android:hint="@string/text_view_name_Edit"
+            android:padding="10sp"
+            android:text="\n\n"
+            android:textAlignment="center"
             android:textColor="@color/blue"
-            android:textSize="22sp"
-            android:layout_margin="8dp"
-            />
-
-        <Spinner
-            android:id="@+id/spiner_DolEditSP"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textSize="22sp"
-            android:background="@color/white"
-            android:textColor="@color/blue"
-            />
+            android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/productFonEditET"
+            android:id="@+id/personDolEditET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
             android:background="@color/white"
-            android:hint="@string/text_view_telefonEdit"
+            android:hint="@string/text_view_role_Edit"
+            android:padding="10sp"
+            android:text="\n\n"
+            android:textAlignment="center"
             android:textColor="@color/blue"
             android:textSize="22sp"
-            android:layout_margin="8dp" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/personFonEditET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:hint="@string/text_view_telefonEdit"
+            android:padding="10sp"
+            android:text="\n\n"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="22sp" />
     </LinearLayout>
 
 
