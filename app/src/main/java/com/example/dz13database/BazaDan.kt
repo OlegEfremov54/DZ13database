@@ -110,6 +110,9 @@ class BazaDan : AppCompatActivity() {
 
 // Получение данных из базы
     buttonGetBTN.setOnClickListener{
+        personNameEditET.text.clear()
+        personDolEditET.text .clear()
+        personFonEditET.text .clear()
         val cursor = db.getInfo()
         if (cursor!=null && cursor.moveToFirst()){
             cursor.moveToFirst()
